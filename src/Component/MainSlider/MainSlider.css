@@ -1,0 +1,9 @@
+.imgSlider{
+    width: 100%;
+    
+    object-fit: cover;
+}
+.slidContainer{
+    height: 500px;
+
+}
