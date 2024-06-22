@@ -13,6 +13,10 @@ import './index.css'
 import Layout from './Layout/Layout.jsx';
 import { Provider } from 'react-redux';
 import { store } from './redux/store.js';
+import Login from './Pages/login/Login.jsx';
+import Register from './Pages/Register/Register.jsx'
+import PrivateRoute from './privateRoute/PrivateRoute.jsx';
+
 
 const router = createBrowserRouter([
     {
@@ -25,17 +29,25 @@ const router = createBrowserRouter([
             },
             {
                 path: "/shop",
-                element:<Shop/> 
+                element:<Shop/>
                },
                {
                 path: "/cart",
-                element:<Cart/> 
+                element:<PrivateRoute><Cart/></PrivateRoute>
+               },{
+                path:"/login",
+                element:<Login/>
+               },{
+                path:"/register",
+                element:<Register/>
                }
         ]
     },
   ]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-    <RouterProvider router={router} />
+  
+   <RouterProvider router={router} />
+
 
 )

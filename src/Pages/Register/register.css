@@ -1,0 +1,10 @@
+.login-form{
+    height: calc(100vh - 80px);
+    
+}
+
+@media (max-width:900px) {
+    .login-form{
+        width: 100% !important;
+    }
+}

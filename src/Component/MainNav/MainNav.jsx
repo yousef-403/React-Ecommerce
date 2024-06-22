@@ -1,13 +1,21 @@
+
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import { useSelector } from 'react-redux';
-import {Link} from 'react-router-dom'
+import {Link, useNavigate} from 'react-router-dom'
 
 
 const MainNav = () => {
-  const cart = useSelector(state =>state.cart)
-
+  const cart = useSelector(state =>state.cart);
+  const navigate = useNavigate();
+  const Username = JSON.parse(localStorage.getItem("user"))
+  const cartItems = JSON.parse(localStorage.getItem("cart"))
+ 
+const handlrLogout = ()=>{
+localStorage.removeItem("logged")
+navigate("/login")
+}
 
   return (
     <Navbar expand="lg" className="bg-body-tertiary">
@@ -20,11 +28,14 @@ const MainNav = () => {
           <Nav className="me-auto">
             <Link to="/" className='nav-link'>Home</Link>
             <Link to="/shop" className='nav-link'>Shop</Link>
-            <Link to="/cart" className='nav-link'>Cart - {cart.length}</Link>
+            <Link to="/cart" className='nav-link'>Cart - {cartItems.length}</Link>
           </Nav>
+
+          <Navbar.Brand> <button className='btn btn-primary' onClick={handlrLogout}>Logout</button></Navbar.Brand>
           <Nav>
+      
           <Link to="/login" className='nav-link'>Login</Link>
-          <Link to="/login" className='nav-link'>Register</Link>
+          <Link to="/register" className='nav-link'>Register</Link>
             
           </Nav>
           

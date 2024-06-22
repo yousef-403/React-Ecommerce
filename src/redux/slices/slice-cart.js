@@ -5,10 +5,12 @@ export const cartSlice = createSlice({
     name:"cartSlice",
     reducers:{
         addToCart:(state,action)=>{
-            state.push(action.payload)
-        }
+            state.push(action.payload);
+            localStorage.setItem("cart" , JSON.stringify(state))
+        },
+        
     }
 })
 
 export const {addToCart}=cartSlice.actions;
-export default cartSlice.reducer
+export default cartSlice.reducer;
