@@ -28,7 +28,7 @@ navigate("/login")
           <Nav className="me-auto">
             <Link to="/" className='nav-link'>Home</Link>
             <Link to="/shop" className='nav-link'>Shop</Link>
-            <Link to="/cart" className='nav-link'>Cart - {cartItems.length}</Link>
+            <Link to="/cart" className='nav-link'>Cart -</Link>
           </Nav>
 
           <Navbar.Brand> <button className='btn btn-primary' onClick={handlrLogout}>Logout</button></Navbar.Brand>

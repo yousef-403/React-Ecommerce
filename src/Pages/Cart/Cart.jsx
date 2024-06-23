@@ -1,14 +1,14 @@
 import { Container } from "react-bootstrap"
 import './Cart.css'
 
-
+import {useSelector} from 'react-redux'
 
 const Cart = () => {
 
 
-  let ShoppingCart = JSON.parse(localStorage.getItem("cart"));
+  let cart = useSelector((state)=>state.cart)
 
-const totalPrice = ShoppingCart.reduce((acc,product)=>{
+const totalPrice = cart.reduce((acc,product)=>{
   acc += product.price
   return acc
 },0)
@@ -24,7 +24,7 @@ const totalPrice = ShoppingCart.reduce((acc,product)=>{
         <table className="shadow-sm">
         <tbody>
           {
-            ShoppingCart.map((item)=>(
+            cart.map((item)=>(
               <tr key={item.id}>
             <td className="cartLine"><img src={item.image} alt="img-1"/></td>
             <td>{item.title}</td>
