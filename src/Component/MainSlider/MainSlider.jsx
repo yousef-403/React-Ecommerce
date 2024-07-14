@@ -1,6 +1,10 @@
 import Container from "react-bootstrap/esm/Container"
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation} from 'swiper/modules';
+import img1 from '/public/1.jpg'
+import img2 from '/public/2.jpg'
+import img3 from '/public/3.jpg'
+import img4 from '/public/4.jpg'
 
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -19,16 +23,16 @@ const MainSlider = () => {
    
  >
    <SwiperSlide className="slidContainer">
-      <img className="imgSlider" src="/public/images/1.jpg" alt="img"/>
+      <img className="imgSlider" src={img1} alt="img"/>
    </SwiperSlide>
    <SwiperSlide className="slidContainer">
-     <img className="imgSlider" src="/public/images/2.jpg" alt="img"/>
+     <img className="imgSlider" src={img2} alt="img"/>
    </SwiperSlide>
    <SwiperSlide className="slidContainer">
-     <img className="imgSlider" src="/public/images/3.jpg" alt="img"/>
+     <img className="imgSlider" src={img3} alt="img"/>
    </SwiperSlide>
    <SwiperSlide className="slidContainer">
-     <img className="imgSlider" src="/public/images/4.jpg" alt="img"/>
+     <img className="imgSlider" src={img4} alt="img"/>
    </SwiperSlide>
    
  </Swiper>
